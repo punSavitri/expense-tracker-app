@@ -129,6 +129,28 @@ select:focus {
 table tr:nth-of-type(even) {
   background-color: #eee;
 }
+.edit-btn {
+  cursor: pointer;
+  border: none;
+  font-size: 18px;
+  transition:
+    background-color 0.3s ease,
+    transform 0.1s ease;
+}
+.edit-btn:hover {
+  background-color: lightgreen;
+}
+.delete-btn {
+  cursor: pointer;
+  font-size: 18px;
+  border: none;
+  transition:
+    background-color 0.3s ease,
+    transform 0.1s ease;
+}
+.delete-btn:hover {
+  background-color: lightcoral;
+}
 .summary {
   padding: 15px;
   background-color: #fff;
