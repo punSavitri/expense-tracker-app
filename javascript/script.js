@@ -35,6 +35,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     //update UI with the new list of expenses
     displayExpenses(expenses);
+    //recalculate and update the total amount
+    updateTotalAmount();
+
+    //clear the input fields
+    expenseForm.reset();
   });
 
   //render the list of expenses inside the table
@@ -49,4 +54,14 @@ document.addEventListener("DOMContentLoaded", () => {
       transactionHistory.appendChild(row);
     });
   }
+
+  function updateTotalAmount(list = expenses) {
+    const total = list.reduce(
+      (sum, expense) => sum + Number(expense.amount || 0),
+      0,
+    );
+
+    totalAmount.textContent = total.toFixed(2);
+  }
+  
 });
