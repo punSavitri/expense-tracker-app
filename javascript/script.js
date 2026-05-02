@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     totalAmount.textContent = total.toFixed(2);
   }
-
+  //adding click event listener for expense table
   transactionHistory.addEventListener("click", (e) => {
     //Edit button logic inside the transaction history table
     const editBtn = e.target.closest(".edit-btn");
@@ -78,13 +78,29 @@ document.addEventListener("DOMContentLoaded", () => {
       updateTotalAmount();
       return;
     }
-    //delet button logic inside the transaction history table
+    //delete button logic inside the transaction history table
     const deleteBtn = e.target.closest(".delete-btn");
     if (deleteBtn) {
       const id = parseInt(deleteBtn.dataset.id);
       expenses = expenses.filter((expense) => expense.id !== id);
       displayExpenses(expenses);
       updateTotalAmount();
+    }
+  });
+
+  //adding change event listener to filter category
+  filterCategory.addEventListener("change", (e) => {
+    const category = e.target.value;
+    //console.log(category);
+    if (category === "All") {
+      displayExpenses(expenses);
+      updateTotalAmount();
+    } else {
+      const filteredCategory = expenses.filter(
+        (expense) => expense.category === category,
+      );
+      displayExpenses(filteredCategory);
+      updateTotalAmount(filteredCategory);
     }
   });
 });
