@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
     expenses.forEach((expense) => {
       //create a new table row inside table body
       const row = document.createElement("tr");
-      row.innerHTML = `<td>${expense.date}</td><td>${expense.name}</td><td>£${Number(expense.amount).toFixed(2)}</td><td>${expense.category}</td><td><button class="edit-btn" data-id=${expense.id}><i class="fas fa-edit" style="border:3px solid green; color:green;"></i></button><button class="delete-btn"   data-id="${expense.id}"><i class="fas fa-trash" style="border:3px solid red; color:red;"></i></button></td>`;
+      row.innerHTML = `<td>${expense.date}</td><td>${expense.name}</td><td>£${Number(expense.amount).toFixed(2)}</td><td>${expense.category}</td><td><button class="edit-btn" data-id=${expense.id}><i class="fas fa-edit" style="border:3px solid green; color:green;" title="Edit button"></i></button><button class="delete-btn"   data-id="${expense.id}"><i class="fas fa-trash" style="border:3px solid red; color:red;" title="Delete button"></i></button></td>`;
       transactionHistory.appendChild(row);
     });
   }
