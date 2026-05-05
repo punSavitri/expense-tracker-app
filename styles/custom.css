@@ -8,7 +8,7 @@ body {
 }
 /* main app container */
 .container {
-  max-width: 600px;
+  max-width: 800px;
   width: 100%;
   background-color: #fff;
   box-shadow: 10px 5px 10px 10px rgb(0 0 0 /10%);
@@ -126,7 +126,7 @@ select:focus {
   color: #060505;
   font-weight: bold;
 }
-table tr:nth-of-type(even) {
+.table-container tr:nth-of-type(even) {
   background-color: #eee;
 }
 .edit-btn {
@@ -176,6 +176,11 @@ table tr:nth-of-type(even) {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
+}
+footer p {
+  font-family:cursive ;
+  text-align: center;
+  
 }
 
 /* responsive label and input side by side on larger screens */
